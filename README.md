@@ -14,7 +14,7 @@ Applications include:
 - **Smart home devices:** identifying utensils or containers.
 - **Assistive technology:** describing items to users via voice.
 - **Mobile AR experiences:** recognizing physical items through a phone camera.
-- 
+  
 
 ## Datasets
 
