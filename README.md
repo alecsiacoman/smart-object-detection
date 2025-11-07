@@ -1,9 +1,9 @@
-# Smart Object Recognition: Classification of Coffee Mugs and Water Bottles
+# Smart Object Recognition: Detection of Cups
 
 ## Introduction
 
 ### Problem Definition
-This project aims to build an **image classification system** capable of distinguishing between **coffee mugs** and **water bottles**. The model will be trained using a dataset of labeled images and deployed in a real-world scenario through a **mobile application** that captures photos and identifies the object category.
+This project aims to build an **object detection system** capable of identifying cups. The model will be trained using a dataset of labeled images and deployed in a real-world scenario through a **mobile application** that captures photos and identifies the object.
 
 This task falls under **pattern recognition** and **computer vision**, with practical relevance in retail inventory management, smart kitchen assistants, waste sorting, and accessibility tools.
 
@@ -14,26 +14,18 @@ Applications include:
 - **Smart home devices:** identifying utensils or containers.
 - **Assistive technology:** describing items to users via voice.
 - **Mobile AR experiences:** recognizing physical items through a phone camera.
-
-By developing a robust classification system for these two categories, we demonstrate how small-scale image classification models can form the basis for larger AI systems.
+- 
 
 ## Datasets
 
-### 1. Water Bottle Image Classification Dataset  
-- *Source:* [Kaggle – “Water Bottle Image Classification Dataset”](https://www.kaggle.com/datasets/chethuhn/water-bottle-dataset)  
-- *Description:* A collection of images showing water bottles in various contexts (lighting, backgrounds, poses).  
-- *Usage:* We will use this dataset to represent the “bottle” class in our classification and detection tasks.  
-- *Preparation:* We’ll split into training and validation sets, possibly remove or label any irrelevant or mis-labeled images, and resize/normalize as required by our model.
+We use a **subset of the COCO dataset (Common Objects in Context)** — one of the most comprehensive and widely used datasets for object detection.
 
-### 2. Cup / Mug Dataset  
-- *Source:* [Kaggle – “Cup_mug_dataset”](https://www.kaggle.com/datasets/malikusman1221/cup-mug-dataset/data)  
-- *Description:* A dataset consisting of images of cups and mugs in different settings (differing shapes, colors, with/without handles, different backgrounds).  
-- *Usage:* This dataset will represent the “mug” class. Because mugs and cups sometimes look different (handle/no handle, glass vs ceramic), we’ll inspect and possibly filter images to focus on mugs (or treat “cup” and “mug” interchangeably if appropriate).  
-- *Preparation:* As above — clean the data, split into train/val, apply consistent preprocessing.
+COCO provides over 118,000 training images and 5,000 validation images, each with **bounding box annotations** for 80 object categories.  
+We will extract only the relevant category for our task:
+- **cup** (category ID: 47)
 
-### Combined Dataset Strategy  
-- For *classification*, we will merge both classes into a simple two-class dataset: mug vs bottle.  
-- For *detection* - TBD (CoCo dataset)
+This subset gives us a large, diverse, and realistic dataset that already contains high-quality annotations of cups in complex, real-world environments (e.g., kitchens, desks, restaurants).
+Available at [https://cocodataset.org](https://cocodataset.org)
 
 ## Libraries & Frameworks
 
